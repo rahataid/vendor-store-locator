@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Store Locator</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <style>
+      .separator {
+        display: flex;
+        align-items: center;
+        text-align: center;
+        margin: 20px 0;
+      }
+      .separator::before,
+      .separator::after {
+        content: "";
+        flex: 1;
+        border-bottom: 1px solid #000;
+      }
+      .separator:not(:empty)::before {
+        margin-right: 0.25em;
+      }
+      .separator:not(:empty)::after {
+        margin-left: 0.25em;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container mt-5">
+      <h1 class="text-center mb-4">Find Stores Near You</h1>
+      <div class="text-center">
+        <button class="btn btn-primary mb-3" onclick="getLocation()">
+          Allow Access to my Location
+        </button>
+
+        <div class="separator">or</div>
+
+        <div class="form-group">
+          <label for="zipInput">Enter Zip Code:</label>
+          <input
+            type="text"
+            class="form-control w-50 mx-auto"
+            id="zipInput"
+            placeholder="Enter Zip Code"
+          />
+        </div>
+        <button class="btn btn-success" onclick="searchStores()">
+          Search Stores
+        </button>
+      </div>
+      <div id="storeList" class="mt-4"></div>
+    </div>
+
+    <script>
+      let stores = [];
+
+      document.addEventListener("DOMContentLoaded", (event) => {
+        fetch("stores.json")
+          .then((response) => response.json())
+          .then((data) => {
+            stores = data;
+          })
+          .catch((error) => {
+            console.error("Error fetching the store data:", error);
+          });
+      });
+
+      function getLocation() {
+        console.log("getLocation");
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(showPosition, showError);
+        } else {
+          alert("Geolocation is not supported by this browser.");
+        }
+      }
+
+      function showPosition(position) {
+        console.log("showPosition");
+        const lat = position.coords.latitude;
+        const lon = position.coords.longitude;
+        console.log({ lat, lon });
+        getZipFromCoordinates(lat, lon);
+      }
+
+      function showError(error) {
+        console.log("showError");
+        let message;
+        switch (error.code) {
+          case error.PERMISSION_DENIED:
+            message = "User denied the request for Geolocation.";
+            break;
+          case error.POSITION_UNAVAILABLE:
+            message = "Location information is unavailable.";
+            break;
+          case error.TIMEOUT:
+            message = "The request to get user location timed out.";
+            break;
+          case error.UNKNOWN_ERROR:
+          default:
+            message = "An unknown error occurred.";
+            break;
+        }
+        alert(message);
+      }
+
+      function getZipFromCoordinates(lat, lon) {
+        console.log("getZipFromCoordinates");
+        fetch(
+          `https://geocode.maps.co/reverse?lat=${lat}&lon=${lon}&api_key=6662b0c058a7e913587985amu31a038`
+        )
+          .then((response) => response.json())
+          .then((data) => {
+            console.log({ data });
+            const zip = data.address.postcode;
+            document.getElementById("zipInput").value = zip;
+            searchStores(); // Automatically trigger the search once the zip code is filled
+          })
+          .catch((error) => {
+            console.error("Error fetching the zip code:", error);
+          });
+      }
+
+      function searchStores() {
+        console.log("searchStores");
+        const zipInput = document.getElementById("zipInput").value.trim();
+        const filteredStores = stores.filter((store) => store.zip == zipInput);
+
+        const storeListDiv = document.getElementById("storeList");
+        storeListDiv.innerHTML = "";
+
+        if (filteredStores.length > 0) {
+          const ul = document.createElement("ul");
+          ul.classList.add("list-group");
+          filteredStores.forEach((store) => {
+            const li = document.createElement("li");
+            li.classList.add("list-group-item");
+            // Create a container to center elements
+            const container = document.createElement("div");
+            container.classList.add("text-center");
+
+            // Add store information
+            container.innerHTML = `<strong>${store.optic_name}</strong> - ${store.address} <br>`;
+
+            // Add "Open in Google Maps" button
+            const openMapsButton = document.createElement("a");
+            openMapsButton.href = store.link;
+            openMapsButton.classList.add(
+              "btn",
+              "btn-primary",
+              "btn-sm",
+              "mt-2"
+            );
+            openMapsButton.textContent = "Open in Google Maps";
+
+            container.appendChild(openMapsButton);
+            li.appendChild(container);
+
+            ul.appendChild(li);
+          });
+          storeListDiv.appendChild(ul);
+        } else {
+          storeListDiv.innerHTML =
+            '<p class="text-danger">No stores found for the provided zip code.</p>';
+        }
+      }
+    </script>
+  </body>
+</html>
