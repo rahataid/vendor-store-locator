@@ -27,6 +27,23 @@
       .separator:not(:empty)::after {
         margin-left: 0.25em;
       }
+      .loader {
+        border: 4px solid rgba(0, 0, 0, 0.1);
+        border-left: 4px solid #000;
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+        animation: spin 1s linear infinite;
+        margin: auto;
+      }
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
     </style>
   </head>
   <body>
@@ -34,7 +51,8 @@
       <h1 class="text-center mb-4">Find Stores Near You</h1>
       <div class="text-center">
         <button class="btn btn-primary mb-3" onclick="getLocation()">
-          Allow Access to my Location
+          <span id="locationButtonContent">Allow Access to my Location</span>
+          <span id="locationButtonLoader" class="loader d-none"></span>
         </button>
 
         <div class="separator">or</div>
@@ -70,7 +88,15 @@
       });
 
       function getLocation() {
-        console.log("getLocation");
+        const locationButtonContent = document.getElementById(
+          "locationButtonContent"
+        );
+        const locationButtonLoader = document.getElementById(
+          "locationButtonLoader"
+        );
+        locationButtonContent.classList.add("d-none");
+        locationButtonLoader.classList.remove("d-none");
+
         if (navigator.geolocation) {
           navigator.geolocation.getCurrentPosition(showPosition, showError);
         } else {
@@ -79,15 +105,12 @@
       }
 
       function showPosition(position) {
-        console.log("showPosition");
         const lat = position.coords.latitude;
         const lon = position.coords.longitude;
-        console.log({ lat, lon });
-        getZipFromCoordinates(lat, lon);
+        findNearestStores(lat, lon);
       }
 
       function showError(error) {
-        console.log("showError");
         let message;
         switch (error.code) {
           case error.PERMISSION_DENIED:
@@ -105,37 +128,64 @@
             break;
         }
         alert(message);
+        resetLocationButton();
       }
 
-      function getZipFromCoordinates(lat, lon) {
-        console.log("getZipFromCoordinates");
-        fetch(
-          `https://geocode.maps.co/reverse?lat=${lat}&lon=${lon}&api_key=6662b0c058a7e913587985amu31a038`
-        )
-          .then((response) => response.json())
-          .then((data) => {
-            console.log({ data });
-            const zip = data.address.postcode;
-            document.getElementById("zipInput").value = zip;
-            searchStores(); // Automatically trigger the search once the zip code is filled
-          })
-          .catch((error) => {
-            console.error("Error fetching the zip code:", error);
-          });
+      function resetLocationButton() {
+        const locationButtonContent = document.getElementById(
+          "locationButtonContent"
+        );
+        const locationButtonLoader = document.getElementById(
+          "locationButtonLoader"
+        );
+        locationButtonContent.classList.remove("d-none");
+        locationButtonLoader.classList.add("d-none");
       }
 
-      function searchStores() {
-        console.log("searchStores");
-        const zipInput = document.getElementById("zipInput").value.trim();
-        const filteredStores = stores.filter((store) => store.zip == zipInput);
+      function findNearestStores(lat, lon) {
+        stores.forEach((store) => {
+          store.distance = getDistanceFromLatLonInKm(
+            lat,
+            lon,
+            store.latitude,
+            store.longitude
+          );
+        });
 
+        const nearestStores = stores
+          .sort((a, b) => a.distance - b.distance)
+          .slice(0, 3);
+        displayStores(nearestStores);
+        resetLocationButton();
+      }
+
+      function getDistanceFromLatLonInKm(lat1, lon1, lat2, lon2) {
+        const R = 6371; // Radius of the earth in km
+        const dLat = deg2rad(lat2 - lat1);
+        const dLon = deg2rad(lon2 - lon1);
+        const a =
+          Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+          Math.cos(deg2rad(lat1)) *
+            Math.cos(deg2rad(lat2)) *
+            Math.sin(dLon / 2) *
+            Math.sin(dLon / 2);
+        const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+        const d = R * c; // Distance in km
+        return d;
+      }
+
+      function deg2rad(deg) {
+        return deg * (Math.PI / 180);
+      }
+
+      function displayStores(stores) {
         const storeListDiv = document.getElementById("storeList");
         storeListDiv.innerHTML = "";
 
-        if (filteredStores.length > 0) {
+        if (stores.length > 0) {
           const ul = document.createElement("ul");
           ul.classList.add("list-group");
-          filteredStores.forEach((store) => {
+          stores.forEach((store) => {
             const li = document.createElement("li");
             li.classList.add("list-group-item");
             // Create a container to center elements
@@ -166,6 +216,13 @@
           storeListDiv.innerHTML =
             '<p class="text-danger">No stores found for the provided zip code.</p>';
         }
+      }
+
+      function searchStores() {
+        const zipInput = document.getElementById("zipInput").value.trim();
+        const filteredStores = stores.filter((store) => store.zip == zipInput);
+
+        displayStores(filteredStores);
       }
     </script>
   </body>
