@@ -27,23 +27,6 @@
       .separator:not(:empty)::after {
         margin-left: 0.25em;
       }
-      .loader {
-        border: 4px solid rgba(0, 0, 0, 0.1);
-        border-left: 4px solid #000;
-        border-radius: 50%;
-        width: 30px;
-        height: 30px;
-        animation: spin 1s linear infinite;
-        margin: auto;
-      }
-      @keyframes spin {
-        0% {
-          transform: rotate(0deg);
-        }
-        100% {
-          transform: rotate(360deg);
-        }
-      }
     </style>
   </head>
   <body>
@@ -52,7 +35,7 @@
       <div class="text-center">
         <button class="btn btn-primary mb-3" onclick="getLocation()">
           <span id="locationButtonContent">Allow Access to my Location</span>
-          <span id="locationButtonLoader" class="loader d-none"></span>
+          <span id="locationButtonLoader" class="spinner-border d-none"></span>
         </button>
 
         <div class="separator">or</div>
