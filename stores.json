@@ -6,47 +6,70 @@
     "zip": 45133,
     "phone_number": 62231221367,
     "channel": "NVG Eye Partner",
-    "link": "https://maps.app.goo.gl/ijWyLH63vVy5cxsQ7"
+    "link": "https://maps.app.goo.gl/ijWyLH63vVy5cxsQ7",
+    "area": "Cirebon",
+    "latitude": -6.730746575,
+    "longitude": 108.5568164
   },
   {
     "optic_name": "Optik A.H Abadi",
     "nvg_code": "NVG21331",
-    "address": " Jl.Raya Jangga Trisi Ds.Karangasem Blok.Toang Cibereng,Kecamatan Trisi Indramayu,Indramayu,Jawa Barat Indonesia",
+    "address": "Jl.Raya Jangga Trisi Ds.Karangasem Blok.Toang Cibereng,Kecamatan Trisi Indramayu,Indramayu,Jawa Barat Indonesia",
+    "zip": "",
     "phone_number": 81324543389,
     "channel": "NVG Eye Partner",
-    "link": "https://maps.app.goo.gl/MHGGoVZmnXzdeK7K6"
+    "link": "https://maps.app.goo.gl/MHGGoVZmnXzdeK7K6",
+    "area": "Cirebon",
+    "latitude": -6.46377296,
+    "longitude": 108.1639556
   },
   {
     "optic_name": "OPTIK LIGA",
     "nvg_code": "NVG21472",
     "address": "Jlan Raya Cikijing No 17,Depan Bni Cikijing, Majalengka, Jawa Barat Indonesia",
+    "zip": "",
     "phone_number": 81313172799,
     "channel": "NVG Eye Partner",
-    "link": "https://maps.app.goo.gl/kGZB1tJBmxh9W82D8"
+    "link": "https://maps.app.goo.gl/kGZB1tJBmxh9W82D8",
+    "area": "Cirebon",
+    "latitude": -7.016518403,
+    "longitude": 108.3664295
   },
   {
     "optic_name": "OPTIK H & R",
     "nvg_code": "NVG21492",
     "address": "Jl.Kolonel Sugiono No.17,Slawi Kulon Slawi, Tegal, Jawa Tengah Indonesia",
+    "zip": "",
     "phone_number": 85865325111,
     "channel": "NVG Eye Partner",
-    "link": "https://maps.app.goo.gl/fr5NS5Vz8Mn6EaJs5"
+    "link": "https://maps.app.goo.gl/fr5NS5Vz8Mn6EaJs5",
+    "area": "Cirebon",
+    "latitude": -6.992149548,
+    "longitude": 109.1428975
   },
   {
     "optic_name": "OPTIK INDONESIA TEGAL",
     "nvg_code": "NVG21567",
     "address": "Jl. Jend. A. Yani No.225, Mintaragen, Kec. Tegal Tim,Tegal,Jawa Tengah Indonesia",
+    "zip": "",
     "phone_number": 818107636,
     "channel": "NVG Eye Partner",
-    "link": "https://maps.app.goo.gl/mqdz9tePztFQCmzBA"
+    "link": "https://maps.app.goo.gl/mqdz9tePztFQCmzBA",
+    "area": "Cirebon",
+    "latitude": -6.864877643,
+    "longitude": 109.1389741
   },
   {
     "optic_name": "OPTIK AL-DZUFY",
     "nvg_code": "NVG21852",
     "address": "Jl.Raya Cilimus No 88,Cilimus,Kuningan,Jawa Barat Indonesia",
+    "zip": "",
     "phone_number": 87718890018,
     "channel": "NVG Eye Partner",
-    "link": "https://maps.app.goo.gl/BA8d7nTSh7UED9uJ6"
+    "link": "https://maps.app.goo.gl/BA8d7nTSh7UED9uJ6",
+    "area": "Cirebon",
+    "latitude": -6.868958812,
+    "longitude": 108.5066184
   },
   {
     "optic_name": "Optik Bhineka-Plumbon",
@@ -55,7 +78,10 @@
     "zip": 45155,
     "phone_number": 8562211375,
     "channel": "NVG Eye Partner",
-    "link": "https://maps.app.goo.gl/q8nwpGxoYAepxfg87"
+    "link": "https://maps.app.goo.gl/q8nwpGxoYAepxfg87",
+    "area": "Cirebon",
+    "latitude": -6.699650972,
+    "longitude": 108.4822748
   },
   {
     "optic_name": "Optik Sinar-Cirebon",
@@ -63,7 +89,11 @@
     "address": "Jl.Flamboyan 1 blok F3 no 47, Komplek Griya Caraka,Kec.Kedawung Kel.Kalikoa,Cirebon, Jawa Barat,Indonesia",
     "zip": 45153,
     "phone_number": 82317677261,
-    "channel": "NVG Eye Partner"
+    "channel": "NVG Eye Partner",
+    "link": "https://maps.app.goo.gl/6eL7WPbX5fabGE1q6",
+    "area": "Cirebon",
+    "latitude": -6.726641605,
+    "longitude": 108.5607583
   },
   {
     "optic_name": "Optik Moetiara-Cirebon",
@@ -72,22 +102,34 @@
     "zip": 45159,
     "phone_number": 89603234555,
     "channel": "NVG Eye Partner",
-    "link": "https://maps.app.goo.gl/YFUdpCRoh5Fnp6NR8"
+    "link": "https://maps.app.goo.gl/YFUdpCRoh5Fnp6NR8",
+    "area": "Cirebon",
+    "latitude": -6.748438637,
+    "longitude": 108.5278442
   },
   {
     "optic_name": "OPTIK METRO (TEGAL)",
     "nvg_code": "NVG20950",
     "address": "Jl Werkudoro No 161 Tegal,Slerok Tegal Timur,Kota Tegal,Jawa Tengah Indonesia",
+    "zip": "",
     "phone_number": 895354007364,
     "channel": "MMO",
-    "link": "https://maps.app.goo.gl/KJfBsUbdjX3ZfKFK7"
+    "link": "https://maps.app.goo.gl/KJfBsUbdjX3ZfKFK7",
+    "area": "Cirebon",
+    "latitude": -6.886041291,
+    "longitude": 109.1413879
   },
   {
     "optic_name": "MODERN OPTIK CIREBON",
     "nvg_code": "NVG21254",
     "address": "Puri Pilangsari 2, Blok C No 8, Cirebon, Jawa Barat Indonesia",
+    "zip": "",
     "phone_number": "081312111118",
-    "channel": "MMO"
+    "channel": "MMO",
+    "link": "",
+    "area": "Cirebon",
+    "latitude": "",
+    "longitude": ""
   },
   {
     "optic_name": "OPTIK SEHATI 99",
@@ -96,15 +138,22 @@
     "zip": 45452,
     "phone_number": 6288218191999,
     "channel": "MMO",
-    "link": "https://maps.app.goo.gl/utfx3n39Mb9AaNc58"
+    "link": "https://maps.app.goo.gl/utfx3n39Mb9AaNc58",
+    "area": "Cirebon",
+    "latitude": -6.765919482,
+    "longitude": 108.1712744
   },
   {
     "optic_name": "OPTIK SALSA FORTUNA",
     "nvg_code": "NVG21290",
     "address": "Jl. Pangeran Muhamad No.83,Rajagaluh Kidul Rajagaluh,Kabupaten Majalengka,Jawa Barat Indonesia",
+    "zip": "",
     "phone_number": 85224103332,
     "channel": "MMO",
-    "link": "https://maps.app.goo.gl/m7Usr4VFC1ysYeag8"
+    "link": "https://maps.app.goo.gl/m7Usr4VFC1ysYeag8",
+    "area": "Cirebon",
+    "latitude": -6.788604278,
+    "longitude": 108.3510876
   },
   {
     "optic_name": "JIHAN OPTIKAL",
@@ -113,22 +162,34 @@
     "zip": 45581,
     "phone_number": 6285353548133,
     "channel": "MMO",
-    "link": "https://maps.app.goo.gl/tko25e4Jfve9whky5"
+    "link": "https://maps.app.goo.gl/tko25e4Jfve9whky5",
+    "area": "Cirebon",
+    "latitude": -7.015164345,
+    "longitude": 108.6274306
   },
   {
     "optic_name": "OPTIK MURTI AJI",
     "nvg_code": "NVG21339",
     "address": "Jl.Ciremai Raya Blok.E No.29, Larangan Harjamukti, Cirebon",
+    "zip": "",
     "phone_number": 8122065448,
     "channel": "MMO",
-    "link": "https://maps.app.goo.gl/eJa7qU5FcYJ6Uydy8"
+    "link": "https://maps.app.goo.gl/eJa7qU5FcYJ6Uydy8",
+    "area": "Cirebon",
+    "latitude": -6.742855334,
+    "longitude": 108.5714387
   },
   {
     "optic_name": "OPTIK ERA BARU",
     "nvg_code": "NVG21452",
     "address": "Jl.K.H Mas Mansyur F5 Slawi Kulon Slawi,Tegal, Jawa Tengah Indonesia",
+    "zip": "",
     "phone_number": 85714288080,
-    "channel": "MMO"
+    "channel": "MMO",
+    "link": "https://maps.app.goo.gl/SpWYuZv4zreeNfX17",
+    "area": "Cirebon",
+    "latitude": -6.796413147,
+    "longitude": 109.9945627
   },
   {
     "optic_name": "Optik Cahaya (Indramayu)",
@@ -136,7 +197,11 @@
     "address": "Jl. Yos Sudarso no 78,Kec. Indramayu, Kab. Indramayu, Jawa Barat, Indonesia",
     "zip": 45211,
     "phone_number": 82243731908,
-    "channel": "MMO"
+    "channel": "MMO",
+    "link": "https://maps.app.goo.gl/JVMdjr96eJVBkJRm7",
+    "area": "Cirebon",
+    "latitude": -6.321254259,
+    "longitude": 108.3268516
   },
   {
     "optic_name": "Optik Akbar/Kuningan",
@@ -145,22 +210,33 @@
     "zip": 45511,
     "phone_number": 81214203244,
     "channel": "Retail",
-    "link": "https://maps.app.goo.gl/xk4CqgFsqudX9Nmk7"
+    "link": "https://maps.app.goo.gl/xk4CqgFsqudX9Nmk7",
+    "area": "Cirebon",
+    "latitude": -6.983584035,
+    "longitude": 108.4803982
   },
   {
     "optic_name": "Optik A.Anzhari",
     "nvg_code": "NVG50339",
     "address": "Jl.Pekarungan No 106,Cirebon, Jawa Barat, Indonesia",
-    "zip": 45511,
+    "zip": 45112,
     "phone_number": 81394708830,
     "channel": "Retail",
-    "link": "https://maps.app.goo.gl/uPzvbbWdEbDEKBnq5"
+    "link": "https://maps.app.goo.gl/uPzvbbWdEbDEKBnq5",
+    "area": "Cirebon",
+    "latitude": -6.717129543,
+    "longitude": 108.5669348
   },
   {
     "optic_name": "Optik Evakuasi",
     "nvg_code": "NVG21785",
     "address": "Jl Evakuasi Gg Langgar No 1,Sebelah Hidropedia Src Agus Kec Kesambi,Cirebon,Jawa Barat",
+    "zip": "",
     "phone_number": 81282872315,
-    "link": "https://maps.app.goo.gl/x9UwLd1fh9LKMyrM6"
+    "channel": "",
+    "link": "https://maps.app.goo.gl/x9UwLd1fh9LKMyrM6",
+    "area": "Cirebon",
+    "latitude": -6.741963225,
+    "longitude": 108.5425283
   }
 ]
