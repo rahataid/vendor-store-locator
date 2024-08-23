@@ -22,5 +22,17 @@
     "area": "Jakarta",
     "latitude": -6.206930739,
     "longitude": 106.7964573
+  },
+  {
+    "optic_name": "Central Optikal 165",
+    "nvg_code": "",
+    "address": "Jl. Siti Jenab No.67, Pamoyanan, Kec. Cianjur, Kabupaten Cianjur, Jawa Barat,Indonesia",
+    "zip": "43211",
+    "phone_number": 85721618973,
+    "channel": "",
+    "link": "https://maps.app.goo.gl/dCSzVMgLtWxcTmww8",
+    "area": "West Java",
+    "latitude": -6.8207328,
+    "longitude": 107.1371133
   }
 ]
